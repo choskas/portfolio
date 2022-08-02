@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import GlobalFonts from './GlobalStyles/GlobalStyles';
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -20,8 +21,10 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        {typeof document === "undefined" ? "__STYLES__" : null}
+        <GlobalFonts />
       </head>
-      <body>
+      <body style={{margin: 0, padding: 0}}>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
