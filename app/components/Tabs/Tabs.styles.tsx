@@ -45,4 +45,5 @@ export const TabContent = styled.div`
   height: 200px;
   width: 100%;
   color: ${colors.font.primary};
+  text-align: justify;
 `;

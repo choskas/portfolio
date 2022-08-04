@@ -21,7 +21,10 @@ const Nav = () => {
           <span>2.</span> Work
         </NavLink>
         <NavLink href="#">
-          <span>3.</span> Contact
+          <span>3.</span> Projects
+        </NavLink>
+        <NavLink href="#">
+          <span>4.</span> Contact
         </NavLink>
         <ButtonStyled> Resume </ButtonStyled>
       </NavLinkButtonContainer>

@@ -8,7 +8,7 @@ interface TabsDataInterface {
   intersectingWork: boolean;
 }
 
-const Tabs = ({ children, active = 0, onClick, intersectingWork }: any) => {
+const Tabs = ({ children, active = 0, onClick = () => {}, intersectingWork }: any) => {
   const [activeTab, setActiveTab] = useState(active);
   const [tabsData, setTabsData] = useState<any>([]);
 
@@ -26,7 +26,7 @@ const Tabs = ({ children, active = 0, onClick, intersectingWork }: any) => {
     data[activeTab].isActive = true;
     setTabsData(data);
   }, [children, activeTab, active]);
-
+  console.log(activeTab, 'active')
   return (
     <Container intersectingWork={intersectingWork}>
       <TabsList>

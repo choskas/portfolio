@@ -1,5 +1,6 @@
 import { Container } from "~/components/Container/Container.styles";
-import { Description, Title } from "./About.styles";
+import { Title } from "~/components/Title/Title.styles";
+import { Description } from "./About.styles";
 
 interface AboutInterface {
   aboutRef: React.RefObject<Element> | any;
@@ -8,7 +9,7 @@ interface AboutInterface {
 
 const About = ({ aboutRef, intersectingAbout }: AboutInterface) => (
   <Container ref={aboutRef}>
-    <Title intersectingAbout={intersectingAbout}>
+    <Title intersecting={intersectingAbout}>
       <span>1. </span>
       About
     </Title>
