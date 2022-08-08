@@ -10,6 +10,7 @@ interface WorkInterface {
 }
 
 const Work = ({ intersectingWork, workRef }: WorkInterface) => {
+  // build
   return (
     <Container ref={workRef}>
       <Title intersecting={intersectingWork}>
