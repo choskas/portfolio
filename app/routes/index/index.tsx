@@ -8,6 +8,9 @@ import Projects from "./components/Projects/Projects";
 import { MainContainer } from "./index.styles";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import { json, LoaderFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { getMainScreenData } from "~/config/graphql";
 
 export default function Index() {
   const aboutRef = useRef();
@@ -20,8 +23,9 @@ export default function Index() {
   const intersectingWork = useInViewPort(workRef)
   const intersectingProjects = useInViewPort(projectsRef)
   const intersectingContact = useInViewPort(contactRef)
-
-  return (
+  const data = useLoaderData();
+  console.log(data, 'data')
+  return (  
     <MainContainer>
       <Nav />
       <Main mainRef={mainRef} intersectingMain={intersectingMain} />
@@ -33,3 +37,14 @@ export default function Index() {
     </MainContainer>
   );
 }
+
+export const loader: LoaderFunction = async () => {
+  try {
+  const mainScreen = await getMainScreenData();
+  return {
+    mainScreen,
+  }
+} catch (error) {
+  console.log(error)
+}
+};

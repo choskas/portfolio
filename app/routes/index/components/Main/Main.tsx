@@ -7,7 +7,8 @@ interface MainInterface {
     intersectingMain: boolean;
 }
 
-const Main = ({mainRef, intersectingMain}: MainInterface) => (
+const Main = ({mainRef, intersectingMain}: MainInterface) => {
+  return (
   <Container ref={mainRef}>
     <Title intersectingMain={intersectingMain}>Choskas</Title>
     <Subtitle intersectingMain={intersectingMain}>Also known as Oscar Delta</Subtitle>
@@ -19,6 +20,6 @@ const Main = ({mainRef, intersectingMain}: MainInterface) => (
       <ButtonStyled>Go to my GitHub</ButtonStyled>
     </a>
   </Container>
-);
+)};
 
 export default Main;
